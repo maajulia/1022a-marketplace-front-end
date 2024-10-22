@@ -13,7 +13,7 @@ type ProdutoType = {
 // Tipos para Usuários
 type UsuarioType = {
   id: number;
-  nome: string;
+  name: string;
   email: string;
   created_at: string;
   updated_at: string;
@@ -32,14 +32,19 @@ function App() {
       .then(resposta => resposta.json())
       .then(dados => setProdutos(dados));
 
-    fetch("https://one022a-marketplace-924k.onrender.com/usuarios")
-      .then(resposta => resposta.json())
-      .then(dados => setUsuarios(dados));
 
   }, []);
 
+  useEffect(() => {
+    fetch("https://one022a-marketplace-924k.onrender.com/usuarios")
+      .then(resposta => resposta.json())
+      .then(dados => setUsuarios(dados))
+  }, [])
+
   return (
     <>
+    
+  <h1>{nome}</h1>
       <div className="produtos-container">
         {produtos.map(produto => (
           <div key={produto.id} className='produto-item'>
@@ -53,7 +58,7 @@ function App() {
       <div className="usuarios-container">
         {usuarios.map(usuario => (
           <div key={usuario.id} className='usuario-item'>
-            <h1>{usuario.nome}</h1>
+            <h1>{usuario.name}</h1>
             <p>{usuario.email}</p>
             <p>{usuario.created_at}</p>
             <p>{usuario.updated_at}</p>

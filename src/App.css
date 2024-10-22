@@ -41,11 +41,11 @@
   color: #888;
 }
 
-
-.produtos-container{
+.produto-container{
   display: flex;
   gap: 20px;
 }
+
 .produto-item{
   width: 300px;
   border: 1px solid #f0f0f0;
@@ -53,10 +53,68 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 12px 2px rgb(195, 195, 195);
 }
+
 .container-imagem{
-  height: 300px;
+  height: 400px;
   overflow: hidden;
 }
-.produto-item>.container-imagem>img{
+
+.produto-item>.conatiner-imagem>img{
   width: 100%;
+  height: 400px;
+}
+
+
+
+/* Container dos usuários */
+.usuario-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Estilo do cartão de cada usuário */
+.usuario-item {
+  width: 300px;
+  border: 1px solid #f0f0f0;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  background-color: white;
+  box-shadow: 0px 0px 12px 2px rgb(195, 195, 195);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre o cartão de usuário */
+.usuario-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Nome do usuário */
+.usuario-item h1 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Detalhes do usuário */
+.usuario-item p {
+  font-size: 16px;
+  color: #666;
+  margin: 5px 0;
+  text-align: center;
+}
+
+/* Efeito hover para os detalhes dos usuários */
+.usuario-item p:hover {
+  color: #4CAF50;
+}
+
+/* Espaçamento entre as seções */
+.usuario-container, .produto-container {
+  margin-bottom: 40px;
 }

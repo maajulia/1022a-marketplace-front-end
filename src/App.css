@@ -1,5 +1,3 @@
-
-
 #root {
   margin: 0px;
   padding: 0px;
@@ -10,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background-color: #333;
+  background-color: #f35c89;
   color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 0;
@@ -45,12 +43,12 @@
 }
 
 .navigation a:hover {
-  color: #ff6600;
+  color: #df9ad0;
 }
 
-.header-actions .login-button {
+.header-actions .cadastro-botao {
   padding: 0.8rem;
-  background-color: #ff6600;
+  background-color: #70c6ee;
   color: #fff;
   font-weight: bold;
   border: none;
@@ -61,7 +59,7 @@
 }
 
 .header-actions .login-button:hover {
-  background-color: #e65c00;
+  background-color: #6dc2e9;
 }
 
 @media (max-width: 768px) {
@@ -105,7 +103,7 @@
 }
 
 .read-the-docs {
-  color: #888;
+  color: #000000;
 }
 
 .produtos-container {
@@ -123,7 +121,7 @@
 
 .titulo-produto {
   font-size: 60px;
-  color: #333;
+  color: #6dc2e9;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -166,13 +164,13 @@
 .produto-preco {
   font-size: 1.1em;
   font-weight: bold;
-  color: #007b00;
+  color:#6dc2e9;
   margin: 0.5rem 0;
 }
 
 .produto-descricao {
   font-size: 0.9em;
-  color: #666;
+  color: #000000;
   margin-bottom: 1rem;
 }
 
@@ -180,7 +178,7 @@
   margin-top: auto;
   width: 100%;
   padding: 0.8rem;
-  background-color: #ff6600;
+  background-color: #6dc2e9;
   color: #fff;
   font-weight: bold;
   border: none;
@@ -191,49 +189,7 @@
 }
 
 .botao-comprar:hover {
-  background-color: #be3c00;
-}
-
-.usuarios-container {
-  padding: 1rem;
-  text-align: center;
-}
-
-.titulo-usuario {
-  font-size: 60px;
-  color: #333;
-  margin-bottom: 1rem;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.usuarios-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.usuario-item {
-  width: calc(33.33% - 1rem);
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  transition: transform 0.2s;
-}
-
-.usuario-item:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.usuario-nome {
-  font-size: 1.2em;
-  margin: 0.5rem 0;
-  color: #333;
+  background-color: #6dc2e9;
 }
 
 @media (max-width: 1024px) {
@@ -247,8 +203,6 @@
   .produto-item,
   .usuario-item {
     width: calc(100% - 1rem);}
-
-
 
 .produtos-container{
   display: flex;
@@ -267,4 +221,8 @@
 }
 .produto-item>.container-imagem>img{
   width: 100%;
+} }
+
+.cadastro-botao{
+  
 }

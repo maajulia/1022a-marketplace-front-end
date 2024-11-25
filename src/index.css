@@ -1,7 +1,4 @@
 
-
-
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -46,7 +43,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: 6dc2e9;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -60,7 +57,105 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    --primary-color: #89bae6;
+    --background-color: #ffffff;
+    --hover-color: #747bff;
+    --button-bg: #f9f9f9;
+  }
+
+  body {
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    background: linear-gradient(45deg, #ff8cc0, #89bae6);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    color: #ffffff;
+    width: 300px;
+  }
+
+  a:hover {
+    color: var(--hover-color);
+  }
+
+  button {
+    background-color: var(--button-bg);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+
+  button:hover {
+    background-color: var(--hover-color);
+    color: #ffffff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #ffffff;
+    --container-bg: linear-gradient(45deg, #ff8cc0, #89bae6);
+    --button-color: #ffffff;
+    --button-bg: #89bae6;
+    --button-hover-bg: #ff8cc0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    width: 300px;
+    height: 300px;
+    background: var(--container-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+
+  button {
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: var(--button-hover-bg);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #89bae6;
     background-color: #ffffff;
   }
   a:hover {

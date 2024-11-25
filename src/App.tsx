@@ -9,30 +9,16 @@ type ProdutoType = {
   imagem: string
 }
 
-// Tipo para usuários
-type UsuarioType = {
-  id: number,
-  name: string,
-  email: string,
-  created_at: string,
-  updated_at: string
-}
-
 function App() {
   const [produtos, setProdutos] = useState<ProdutoType[]>([])
-  const [usuarios, setUsuarios] = useState<UsuarioType[]>([])
+
 
   // useEffect para carregar produtos e usuários
   useEffect(() => {
     // Buscar os produtos
-    fetch("https://one022a-marketplace-e90o.onrender.com/produtos")
+    fetch("http://localhost:8000/produtos")
       .then(resposta => resposta.json())
       .then(dados => setProdutos(dados))
-
-    // Buscar os usuários
-    fetch("https://one022a-marketplace-e90o.onrender.com/usuarios")
-      .then(resposta => resposta.json())
-      .then(dados => setUsuarios(dados))
   }, [])
 
   return (
@@ -40,24 +26,22 @@ function App() {
 
 
       <header className="site-header">
-
-
         <nav className="navigation">
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#produtos">Produtos</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a href="#novidades">Novidades</a></li>
+            <li><a href="#feminino">Feminino</a></li>
+            <li><a href="#masculino">Masculino</a></li>
+            <li><a href="#kids">Kids</a></li>
           </ul>
         </nav>
 
-        <div className="header-actions">
-          <button className="login-button">Login</button>
-        </div>
+       <a href="http://localhost:5174/cadastro-produtos">
+       <button className = "button">Cadastro Look</button></a>
+
       </header>
       {/* Listagem de Produtos */}
       <div className="produtos-container">
-        <h1 className='titulo-produto'>Produtos</h1>
+        <h1 className='titulo-produto'>Mundo Encantado</h1>
         <div className="produtos-list">
           {
             produtos.map(produto => (
@@ -73,23 +57,6 @@ function App() {
             ))
           }
         </div>
-      </div>
-
-      {/* Listagem de Usuários */}
-      <div className="usuarios-container">
-        <h1 className='titulo-usuario'>Usuários</h1>
-        <div className="usuarios-list"> {/* Adicionando wrapper */}
-          {
-            usuarios.map(usuario => (
-              <div key={usuario.id} className="usuario-item">
-                <h1 className="usuario-nome">{usuario.name}</h1>
-                <p>Email: {usuario.email}</p>
-                <p>Criado em: {new Date(usuario.created_at).toLocaleDateString()}</p>
-                <p>Atualizado em: {new Date(usuario.updated_at).toLocaleDateString()}</p>
-              </div>
-            ))
-          }
-        </div> {/* Fechando a div aqui */}
       </div>
     </>
   )

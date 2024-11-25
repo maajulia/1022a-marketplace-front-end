@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Header from './componentes/header'
 import './App.css'
 // Tipo para produtos
 type ProdutoType = {
@@ -23,22 +24,7 @@ function App() {
 
   return (
     <>
-
-
-      <header className="site-header">
-        <nav className="navigation">
-          <ul>
-            <li><a href="#novidades">Novidades</a></li>
-            <li><a href="#feminino">Feminino</a></li>
-            <li><a href="#masculino">Masculino</a></li>
-            <li><a href="#kids">Kids</a></li>
-          </ul>
-        </nav>
-
-       <a href="http://localhost:5174/cadastro-produtos">
-       <button className = "button">Cadastro Look</button></a>
-
-      </header>
+    <Header/>
       {/* Listagem de Produtos */}
       <div className="produtos-container">
         <h1 className='titulo-produto'>Mundo Encantado</h1>

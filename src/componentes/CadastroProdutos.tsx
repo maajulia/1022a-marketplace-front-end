@@ -1,5 +1,7 @@
 import {  ChangeEvent, FormEvent, useState } from "react"
 import { useNavigate } from 'react-router-dom';
+import Header from "./header";
+import './cadastroProduto.css'
 function CadastroProduto(){
     const navigate = useNavigate()
     const [id,setId] = useState("")
@@ -47,7 +49,8 @@ function CadastroProduto(){
     }
     return(
         <>
-            <h1>Meu Componente de Cadastro de Produtos</h1>
+            <Header/>
+            <h1> Cadastro de Produtos</h1>
             <form onSubmit={handleForm}>
                 <div>
                     <input placeholder="Id" type="text" name="id" id="id" onChange={handleId} />

@@ -1,20 +1,8 @@
-/* Estilo geral */
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #eef2f3; /* Fundo neutro */
-  font-family: 'Roboto', Arial, sans-serif;
-
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  height: 1000px;
-  box-sizing: border-box;
-}
 
 /* Título */
 h1 {
   font-size: 2.5rem;
-  color: #5c5f97; /* Tom azul arroxeado */
+  color: #f35c89; /* Tom azul arroxeado */
   margin-bottom: 30px;
   text-align: center;
   font-weight: bold;
@@ -71,14 +59,14 @@ form input[type="submit"] {
   border-radius: 8px;
   font-size: 1.1rem;
   font-weight: bold;
-  background-color: #5c5f97; /* Cor azul arroxeada */
+  background-color: #f35c89; /* Cor azul arroxeada */
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 form input[type="submit"]:hover {
-  background-color: #4b4e85; /* Azul mais escuro ao passar o mouse */
+  background-color: #e40687; /* Azul mais escuro ao passar o mouse */
 }
 
 /* Ajuste de espaçamento entre itens */

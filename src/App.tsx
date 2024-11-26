@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Header from './componentes/header'
+import {Link} from 'react-router-dom'
 import './App.css'
 // Tipo para produtos
 type ProdutoType = {
@@ -13,7 +13,6 @@ type ProdutoType = {
 function App() {
   const [produtos, setProdutos] = useState<ProdutoType[]>([])
 
-
   // useEffect para carregar produtos e usuários
   useEffect(() => {
     // Buscar os produtos
@@ -24,7 +23,22 @@ function App() {
 
   return (
     <>
-    <Header/>
+            <header className="site-header">
+                <nav className="navigation">
+                    <ul>
+                        <li><a href="#novidades">Novidades</a></li>
+                        <li><a href="#feminino">Feminino</a></li>
+                        <li><a href="#masculino">Masculino</a></li>
+                        <li><a href="#kids">Kids</a></li>
+                    </ul>
+                </nav>
+
+                <Link to={"/cadastro-produtos"} className="button">Cadastro Look</Link>
+
+            </header>
+        
+    
+
       {/* Listagem de Produtos */}
       <div className="produtos-container">
         <h1 className='titulo-produto'>Mundo Encantado</h1>

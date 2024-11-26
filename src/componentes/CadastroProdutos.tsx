@@ -1,6 +1,5 @@
 import {  ChangeEvent, FormEvent, useState } from "react"
 import { useNavigate } from 'react-router-dom';
-import Header from "./header";
 import './cadastroProduto.css'
 function CadastroProduto(){
     const navigate = useNavigate()
@@ -9,9 +8,12 @@ function CadastroProduto(){
     const [descricao,setDescricao] = useState("")
     const [preco,setPreco] = useState("")
     const [imagem,setImagem] = useState("")
-    function handleForm(event:FormEvent){
+
+    
+    async function handleForm(event:FormEvent){
         event.preventDefault()
-        fetch("http://localhost:8000/produtos",{
+        try{
+            const resposta = await fetch("http://localhost:8000/produtos",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -24,13 +26,17 @@ function CadastroProduto(){
                 imagem:imagem
             })
         })
-        .then(()=>{
-            alert("Produto Cadastro com Sucesso")
-            navigate("/")
-        })
-        .catch(()=>{
-            console.log("Erro ao cadastrar produtos")
-        })
+      if(resposta.status == 201){
+        ("Roupa cadastrada com sucesso"  )
+        navigate("/")
+      }
+      else{
+        const mensagem = await resposta.text()
+        alert("erro ao cadastrar-error:" + mensagem)
+      }
+        .catch(e){
+         alert("Erro ao cadastrar produtos")
+        }
     }
     function handleId(event:ChangeEvent<HTMLInputElement>){
         setId(event.target.value)
@@ -49,8 +55,8 @@ function CadastroProduto(){
     }
     return(
         <>
-            <Header/>
-            <h1> Cadastro de Produtos</h1>
+         
+            <h1>Cadastro de Produtos</h1>
             <form onSubmit={handleForm}>
                 <div>
                     <input placeholder="Id" type="text" name="id" id="id" onChange={handleId} />
@@ -71,6 +77,7 @@ function CadastroProduto(){
             </form>
         </>
     )
+}
 }
 
 export default CadastroProduto

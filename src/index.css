@@ -55,54 +55,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --primary-color: #89bae6;
-    --background-color: #ffffff;
-    --hover-color: #747bff;
-    --button-bg: #f9f9f9;
-  }
-
-  body {
-    color: var(--primary-color);
-    background-color: var(--background-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-
-  .container {
-    background: linear-gradient(45deg, #ff8cc0, #89bae6);
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    text-align: center;
-    color: #ffffff;
-    width: 300px;
-  }
-
-  a:hover {
-    color: var(--hover-color);
-  }
-
-  button {
-    background-color: var(--button-bg);
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    color: var(--primary-color);
-    font-weight: bold;
-  }
-
-  button:hover {
-    background-color: var(--hover-color);
-    color: #ffffff;
-  }
-}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -153,14 +105,3 @@ button:focus-visible {
   }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #89bae6;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;}
-}

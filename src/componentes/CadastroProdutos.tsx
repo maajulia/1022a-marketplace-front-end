@@ -2,43 +2,40 @@ import {  ChangeEvent, FormEvent, useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import './cadastroProduto.css'
 function CadastroProduto(){
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [id,setId] = useState("")
     const [nome,setNome] = useState("")
     const [descricao,setDescricao] = useState("")
     const [preco,setPreco] = useState("")
     const [imagem,setImagem] = useState("")
 
-    
-    async function handleForm(event:FormEvent){
-        event.preventDefault()
-        try{
-            const resposta = await fetch("http://localhost:8000/produtos",{
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify({
-                id:id,
-                nome:nome,
-                descricao:descricao,
-                preco:preco,
-                imagem:imagem
-            })
-        })
-      if(resposta.status == 201){
-        ("Roupa cadastrada com sucesso"  )
-        navigate("/")
-      }
-      else{
-        const mensagem = await resposta.text()
-        alert("erro ao cadastrar-error:" + mensagem)
-      }
-        .catch(e){
-         alert("Erro ao cadastrar produtos")
+    function handleForm(event:FormEvent){
+        event.preventDefault();
+        console.log("Tentei cadastrar produtos");
+        const produto = {
+            id: id,
+            nome: nome,
+            descricao: descricao,
+            preco: preco,
+            imagem: imagem
         }
+        fetch("http://localhost:8000/produtos",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(produto)
+        }).then(response => {
+            if(response.status === 200){
+                alert("Produto cadastrado com sucesso")
+                navigate("/")
+            }
+            else{
+                alert("Erro ao cadastrar produto")
+            }
+        })
     }
-    function handleId(event:ChangeEvent<HTMLInputElement>){
+   function handleId(event:ChangeEvent<HTMLInputElement>){
         setId(event.target.value)
     }
     function handleNome(event:ChangeEvent<HTMLInputElement>){
@@ -55,7 +52,7 @@ function CadastroProduto(){
     }
     return(
         <>
-         
+
             <h1>Cadastro de Produtos</h1>
             <form onSubmit={handleForm}>
                 <div>
@@ -77,7 +74,6 @@ function CadastroProduto(){
             </form>
         </>
     )
-}
 }
 
 export default CadastroProduto

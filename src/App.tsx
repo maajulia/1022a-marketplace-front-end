@@ -33,11 +33,9 @@ function App() {
                     </ul>
                 </nav>
 
-                <Link to={"/cadastro-produtos"} className="button">Cadastro Look</Link>
+                <Link to={"/cadastro-produtos"} className="buttonCAD">Cadastrar Produtos</Link>
 
             </header>
-        
-    
 
       {/* Listagem de Produtos */}
       <div className="produtos-container">

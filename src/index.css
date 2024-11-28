@@ -6,7 +6,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,15 +14,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #fcfcfc;
   text-decoration: inherit;
 }
-a:hover {
-  color: #535bf2;
-}
+
 
 body {
   margin: 0; /* Remove margens do body */
@@ -48,7 +45,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #ff64dd;
 }
 button:focus,
 button:focus-visible {
@@ -68,15 +65,15 @@ button:focus-visible {
   body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    /*height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg-color);
-    font-family: Arial, sans-serif;
+    background-color: white;
+    font-family: Arial, sans-serif;*/
   }
 
-  .container {
+  /*.container {
     width: 300px;
     height: 300px;
     background: var(--container-bg);
@@ -86,22 +83,8 @@ button:focus-visible {
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
-  }
+  }*/
 
-  button {
-    background-color: var(--button-bg);
-    color: var(--button-color);
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  button:hover {
-    background-color: var(--button-hover-bg);
-  }
+  
 }
 

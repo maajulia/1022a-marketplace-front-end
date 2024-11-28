@@ -1,6 +1,7 @@
 import {  ChangeEvent, FormEvent, useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import './cadastroProduto.css'
+import {Link} from 'react-router-dom'
 function CadastroProduto(){
     const navigate = useNavigate();
     const [id,setId] = useState("")
@@ -52,26 +53,37 @@ function CadastroProduto(){
     }
     return(
         <>
+            <header className="cabecalho">
+        <h1>Mundo Encantado</h1>
+        <p>Adicione novos produtos ao sistema</p>
 
-            <h1>Cadastro de Produtos</h1>
-            <form onSubmit={handleForm}>
-                <div>
-                    <input placeholder="Id" type="text" name="id" id="id" onChange={handleId} />
+        <button className='buttonCAD'><Link to={"/"}>Voltar</Link></button>
+    </header>
+            
+            <div className="cadastro">
+
+                <div className="titulo"><span>Cadastro de Produtos</span></div>
+                <div className="formulario">
+                    <form onSubmit={handleForm}>
+                        <div>
+                            <input placeholder="Id" type="text" name="id" id="id" onChange={handleId} />
+                        </div>
+                        <div>
+                            <input placeholder="Nome" type="text" name="nome" id="nome" onChange={handleNome} />
+                        </div>
+                        <div>
+                            <input placeholder="Descrição" type="text" name="descricao" id="descricao" onChange={handleDescricao} />
+                        </div>
+                        <div>
+                            <input placeholder="Preço" type="text" name="preco" id="preco" onChange={handlePreco} />
+                        </div>
+                        <div>
+                            <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" onChange={handleImagem} />
+                        </div>
+                        <input type="submit" value="Cadastrar" />
+                    </form>
                 </div>
-                <div>
-                    <input placeholder="Nome" type="text" name="nome" id="nome" onChange={handleNome} />
-                </div>
-                <div>
-                    <input placeholder="Descrição" type="text" name="descricao" id="descricao" onChange={handleDescricao} />
-                </div>
-                <div>
-                    <input placeholder="Preço" type="text" name="preco" id="preco" onChange={handlePreco} />
-                </div>
-                <div>
-                    <input placeholder="URL Imagem" type="text" name="imagem" id="imagem" onChange={handleImagem} />
-                </div>
-                <input type="submit" value="Cadastrar" />
-            </form>
+            </div>
         </>
     )
 }

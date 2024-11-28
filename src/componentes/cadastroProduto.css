@@ -1,12 +1,24 @@
+.cadastro {
+  display: flex; /* Enables flex context */
+  flex-direction: column; /* Stacks items vertically */
+  justify-content: center;
+}
+.formulario{
+  display: flex;
+  justify-content: center;
+}
 
-/* Título */
-h1 {
-  font-size: 2.5rem;
+.titulo{
+  font-size: 2.3rem;
   color: #f35c89; 
   margin-bottom: 30px;
+  margin-top: 80px;
   text-align: center;
   font-weight: bold;
+
 }
+
+
 
 /* Caixa do formulário */
 form {
@@ -73,3 +85,32 @@ form input[type="submit"]:hover {
 form div:last-child {
   margin-bottom: 0;
 }
+
+
+
+.cabecalho {
+  background-color: #f35c89; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  padding: 20px 0; /* Espaçamento interno */
+  text-align: center; /* Alinhar texto ao centro */
+}
+
+.cabecalho h1 {
+  font-size: 40px; /* Tamanho da fonte do título */
+  margin: 0; /* Remove margens automáticas */
+}
+
+.cabecalho p {
+  font-size: 18px; /* Tamanho da fonte para a descrição */
+  margin-top: 5px; /* Espaço entre o título e a descrição */
+}
+
+/* Título */
+h1 {
+  font-size: 2.3rem;
+  color: #5fc0ec; 
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
